@@ -180,6 +180,7 @@ enum llm_arch {
     LLM_ARCH_BEAM,
     LLM_ARCH_KOLIBRI1,
     LLM_ARCH_LIMITE,
+    LLM_ARCH_DEMOLLAMA,
     LLM_ARCH_UNKNOWN,
 };
 

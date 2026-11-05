@@ -46,6 +46,8 @@ static llama_model * llama_model_mapping(llm_arch arch, const llama_model_params
             return new llama_model_clip(params);
         case LLM_ARCH_LLAMA:
             return new llama_model_llama(params);
+        case LLM_ARCH_DEMOLLAMA:
+            return new llama_model_demollama(params);
         case LLM_ARCH_LLAMA4:
             return new llama_model_llama4(params);
         case LLM_ARCH_LLAMA_EMBED:
@@ -3629,6 +3631,7 @@ llama_rope_type llama_model_rope_type(const llama_model * model) {
 
         // use what we call a normal RoPE, operating on pairs of consecutive head values
         case LLM_ARCH_LLAMA:
+        case LLM_ARCH_DEMOLLAMA:
         case LLM_ARCH_LLADA:
         case LLM_ARCH_LLAMA4:
         case LLM_ARCH_DECI:

@@ -1024,6 +1024,9 @@ static bool arch_supported(const llm_arch arch) {
     if (arch == LLM_ARCH_CLIP || arch == LLM_ARCH_GPTJ || arch == LLM_ARCH_UNKNOWN) {
         return false; // These models don't have usable implementations.
     }
+    if (arch == LLM_ARCH_DEMOLLAMA) {
+        return false; // teaching demo, not part of the model matrix
+    }
     if (arch == LLM_ARCH_CHAMELEON) {
         return false; // Only half-implemented and to be removed in the future.
     }
